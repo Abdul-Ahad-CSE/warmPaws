@@ -1,8 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 export default function Card({ data }) {
   //console.log(data);
+  const {serviceId} = data;
   return (
     <div>
       <div className="grid grid-cols-3">
@@ -35,9 +36,11 @@ export default function Card({ data }) {
             </div>
 
             <div className="card-actions justify-end mt-4">
-              <button className="btn btn-sm btn-primary rounded-lg px-4">
-                View Details
-              </button>
+              <Link to={`/card-details/${serviceId}`}>
+                <button className="btn btn-sm btn-primary rounded-lg px-4">
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
         </div>

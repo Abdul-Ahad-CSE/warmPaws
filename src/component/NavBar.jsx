@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router";
 export default function NavBar() {
   return (
     <div className="w-11/12 mx-auto">
@@ -28,13 +29,26 @@ export default function NavBar() {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-32 p-2 shadow"
             >
               <li>
-                <a>Home</a>
+                <Link to="/">
+                  <a>Home</a>
+                </Link>
               </li>
               <li>
-                <a>Services</a>
+                <Link
+                  to="/"
+                  onClick={() =>
+                    document
+                      .getElementById("services-section")
+                      .scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <a>Services</a>
+                </Link>
               </li>
               <li>
-                <a>MyProfile</a>
+                <Link>
+                  <a>My Profile</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -56,13 +70,26 @@ export default function NavBar() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link to="/">
+                <a>Home</a>
+              </Link>
             </li>
             <li>
-              <a>Services</a>
+              <Link
+                to="/"
+                onClick={() =>
+                  document
+                    .getElementById("services-section")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                <a>Service</a>
+              </Link>
             </li>
             <li>
-              <a>MyProfile</a>
+              <Link>
+                <a>My Profile</a>
+              </Link>
             </li>
           </ul>
         </div>

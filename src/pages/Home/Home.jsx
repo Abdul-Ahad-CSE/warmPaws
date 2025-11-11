@@ -15,7 +15,7 @@ export default function Home() {
     <div className="w-11/12 mx-auto">
       <HeroSlider></HeroSlider>
 
-      <h2 className="text-5xl font-bold text-center text-blue-700 mb-8 mt-10">
+      <h2 id="services-section" className="text-5xl font-bold text-center text-blue-700 mb-8 mt-10">
           Our Services
         </h2>
 

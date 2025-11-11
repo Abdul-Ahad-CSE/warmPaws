@@ -16,7 +16,7 @@ export default function Expert() {
           </p>
         </div>
 
-        {/* Vets Grid */}
+        
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {/* Vet 1 */}
           <div className="card bg-emerald-50 shadow-md hover:shadow-xl transition-all border border-emerald-100 text-center p-6 rounded-2xl">

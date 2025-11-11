@@ -7,11 +7,7 @@ export default function ErrorPage() {
       <div className="text-center">
         {/* Illustration / Image Placeholder */}
         <div className="mb-8">
-          <img 
-            src="" // Add your error illustration here
-            alt=""
-            className="w-64 mx-auto"
-          />
+          
         </div>
 
         {/* Main Error Text */}

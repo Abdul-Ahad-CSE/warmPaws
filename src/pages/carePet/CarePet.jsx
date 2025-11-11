@@ -9,7 +9,7 @@ export default function CarePet() {
           Winter Care Tips for Pets
         </h2>
 
-        {/* Tips Grid */}
+        
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 */}
           <div className="card bg-white shadow-xl border border-blue-100">
