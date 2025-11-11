@@ -1,9 +1,9 @@
 import React from "react";
-
+import logo from "../assets/logo.png";
 export default function NavBar() {
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className="w-11/12 mx-auto">
+      <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,54 +25,49 @@ export default function NavBar() {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-32 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <a>Home</a>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <a>Services</a>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>MyProfile</a>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">
+            <img className="w-14 h-14" src={logo} alt="" />
+            <span
+              style={{
+                background: "linear-gradient(to right, #FF7B4F, #5DACE8)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              WarmPaws
+            </span>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <a>Home</a>
             </li>
             <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <a>Services</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>MyProfile</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn btn-neutral btn-outline w-24">Login</a>
         </div>
       </div>
     </div>

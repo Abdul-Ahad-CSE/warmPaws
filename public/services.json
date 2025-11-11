@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.ibb.co.com/HTbVtJnr/dog1.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.ibb.co.com/HTbVtJnr/dog1.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Kennel Setup",
+    "providerName": "WarmPaws Shelter",
+    "providerEmail": "support@warmpaws.com",
+    "price": 45,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Installation of safe, energy-efficient heating pads and insulation for your pet’s kennel.",
+    "image": "https://i.ibb.co.com/HTbVtJnr/dog1.png",
+    "category": "Shelter"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Nutritional Winter Diet Plan",
+    "providerName": "HealthyTails Nutrition",
+    "providerEmail": "contact@healthytails.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Customized winter meal plans rich in nutrients to boost immunity and warmth.",
+    "image": "https://i.ibb.co.com/HTbVtJnr/dog1.png",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Winter Walk Assistance",
+    "providerName": "FrostyFriends Walkers",
+    "providerEmail": "walks@frostyfriends.com",
+    "price": 18,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Professional dog walking service with protective gear and warm shelters during walks.",
+    "image": "https://i.ibb.co.com/HTbVtJnr/dog1.png",
+    "category": "Outdoor Care"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Pet Skin & Coat Moisturizing Session",
+    "providerName": "SnowyTails Spa",
+    "providerEmail": "care@snowytails.com",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Deep moisturizing spa treatment to prevent dry skin and coat damage during winter.",
+    "image": "https://i.ibb.co.com/HTbVtJnr/dog1.png",
+    "category": "Spa & Wellness"
+  }
+]
