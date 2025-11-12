@@ -27,7 +27,7 @@ const sliderData = [
   {
     id: 3,
     image: cat2,
-    alt: 'Small dog wrapped in a warm blanket',
+    alt: 'Small dog wrapped in a warm cozy blanket',
     title: 'Snuggle Up This Season: Comfort & Care',
     description: 'Beyond clothing, explore our range of warming beds, grooming essentials, and health tips for a healthy winter season.',
   },
