@@ -5,7 +5,7 @@ import CardDetailsCard from "../CardDetailsCard/CardDetailsCard";
 export default function CardDetails() {
   const data = useLoaderData();
   const { serviceId } = useParams();
-  console.log(serviceId, data);
+  //console.log(serviceId, data);
 
   const [service, setService] = useState({});
 

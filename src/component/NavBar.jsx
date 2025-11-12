@@ -60,7 +60,7 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link>
+                <Link to="/myprofile">
                   <a>My Profile</a>
                 </Link>
               </li>
@@ -102,7 +102,7 @@ export default function NavBar() {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/myprofile">
                 <a>My Profile</a>
               </Link>
             </li>

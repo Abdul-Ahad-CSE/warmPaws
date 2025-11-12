@@ -8,6 +8,9 @@ import CardDetails from "../pages/CardDetails/CardDetails";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import PrivateRouter from "../provider/PrivateRouter";
+import MyProfile from "../pages/MyProfile/MyProfile";
+import PrivateRouterProfile from "../provider/PrivateRouterProfile";
 
 export const router = createBrowserRouter([
   {
@@ -23,23 +26,35 @@ export const router = createBrowserRouter([
       },
       {
         path: "/card-details/:serviceId",
-        Component: CardDetails,
+        element: (
+          <PrivateRouter>
+            <CardDetails></CardDetails>
+          </PrivateRouter>
+        ),
         loader: () => fetch("/services.json"),
+      },
+      {
+        path: "/myprofile",
+        element: (
+          <PrivateRouterProfile>
+            <MyProfile></MyProfile>
+          </PrivateRouterProfile>
+        ),
       },
     ],
   },
   {
-    path:"/auth",
-    Component:AuthLayout,
-    children:[
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
       {
-        path:"/auth/login",
-        Component:Login,
+        path: "/auth/login",
+        Component: Login,
       },
       {
-        path:"/auth/register",
-        Component:Register,
-      }
-    ]
+        path: "/auth/register",
+        Component: Register,
+      },
+    ],
   },
 ]);
