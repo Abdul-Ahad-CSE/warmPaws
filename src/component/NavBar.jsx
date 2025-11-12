@@ -1,9 +1,23 @@
-import React from "react";
+import React, { use } from "react";
 import logo from "../assets/logo.png";
+import userIcon from "../assets/userIcon.gif";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 export default function NavBar() {
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    console.log("usre trying to logout");
+    logOut()
+      .then(() => {
+        alert("You logged out successfully")
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="w-11/12 mx-auto">
+      <div>{user && user.email}</div>
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -52,9 +66,10 @@ export default function NavBar() {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
+          <div className="flex items-center text-xl ">
             <img className="w-14 h-14" src={logo} alt="" />
             <span
+              className="hidden sm:block"
               style={{
                 background: "linear-gradient(to right, #FF7B4F, #5DACE8)",
                 WebkitBackgroundClip: "text",
@@ -65,7 +80,7 @@ export default function NavBar() {
             >
               WarmPaws
             </span>
-          </a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -94,7 +109,19 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-neutral btn-outline w-24">Login</a>
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn btn-neutral btn-outline w-34"
+            >
+              <img className="w-10 h-10" src={userIcon} alt="" />
+              LogOut
+            </button>
+          ) : (
+            <Link className="btn btn-neutral btn-outline w-34" to="/auth/login">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

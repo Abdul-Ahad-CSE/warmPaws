@@ -5,6 +5,9 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Card from "../pages/card/card";
 import CardDetails from "../pages/CardDetails/CardDetails";
+import AuthLayout from "../layouts/AuthLayout";
+import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
 
 export const router = createBrowserRouter([
   {
@@ -24,5 +27,19 @@ export const router = createBrowserRouter([
         loader: () => fetch("/services.json"),
       },
     ],
+  },
+  {
+    path:"/auth",
+    Component:AuthLayout,
+    children:[
+      {
+        path:"/auth/login",
+        Component:Login,
+      },
+      {
+        path:"/auth/register",
+        Component:Register,
+      }
+    ]
   },
 ]);
