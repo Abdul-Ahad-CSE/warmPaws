@@ -21,7 +21,7 @@ export default function NavBar() {
   return (
     <div className="w-11/12 mx-auto">
       <Toaster position="top-center" reverseOrder={false} />
-      <div>{user && user.email}</div>
+
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -127,11 +127,7 @@ export default function NavBar() {
             </button>
           ) : (
             <Link className="btn btn-neutral btn-outline w-34" to="/auth/login">
-              <img
-                className="w-10 h-10"
-                src={userIcon}
-                alt=""
-              />
+              <img className="w-10 h-10" src={userIcon} alt="" />
               Login
             </Link>
           )}
