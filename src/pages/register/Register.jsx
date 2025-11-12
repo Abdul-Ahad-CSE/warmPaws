@@ -1,10 +1,13 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Register() {
   const { createUser, setUser } = use(AuthContext);
-
+  const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     //console.log(e.target);
@@ -12,7 +15,25 @@ export default function Register() {
     const name = form.name.value;
     const photo = form.photo.value;
     const email = form.email.value;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    } else {
+      setEmailError("");
+    }
     const password = form.password.value;
+    if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters long");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setPasswordError("Password must contain at least one uppercase letter");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setPasswordError("Password must contain at least one lowercase letter");
+      return;
+    } else {
+      setPasswordError("");
+    }
     //console.log({ name, photo, email, password });
     createUser(email, password)
       .then((result) => {
@@ -64,16 +85,30 @@ export default function Register() {
               placeholder="Email"
               required
             />
+            {emailError && <p className="text-red-700 text-xs">{emailError}</p>}
 
             {/* Password */}
             <label className="label">Password</label>
-            <input
-              name="password"
-              type="password"
-              className="input"
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                className="input"
+                placeholder="Password"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-6 flex items-center text-gray-500 hover:text-gray-700"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
+
+            {passwordError && (
+              <p className="text-red-700 text-xs">{passwordError}</p>
+            )}
 
             <button type="submit" className="btn btn-neutral mt-4">
               Register

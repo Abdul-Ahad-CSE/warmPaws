@@ -3,20 +3,24 @@ import logo from "../assets/logo.png";
 import userIcon from "../assets/userIcon.gif";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
+
 export default function NavBar() {
   const { user, logOut } = use(AuthContext);
   const handleLogOut = () => {
-    console.log("usre trying to logout");
+    //console.log("usre trying to logout");
     logOut()
       .then(() => {
-        alert("You logged out successfully")
+        toast.success("You logged out successfully");
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
+        toast.error("Logout failed. Please try again");
       });
   };
   return (
     <div className="w-11/12 mx-auto">
+      <Toaster position="top-center" reverseOrder={false} />
       <div>{user && user.email}</div>
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">

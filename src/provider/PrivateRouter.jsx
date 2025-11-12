@@ -21,6 +21,6 @@ export default function PrivateRouter({ children }) {
     return children;
   }
   // else navigate -> Login
-  return <Navigate to="/auth/login"></Navigate>;
+  return <Navigate state={location.pathname} to="/auth/login"></Navigate>;
   
 }
