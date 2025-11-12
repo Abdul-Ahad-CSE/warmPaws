@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { use } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 export default function MyProfile() {
-  return (
-    <div>MyProfile</div>
-  )
+  const { user } = use(AuthContext);
+  return <div>{user && user.email} {user && user.name}</div>;
 }

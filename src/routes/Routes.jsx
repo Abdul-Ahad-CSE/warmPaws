@@ -11,6 +11,7 @@ import Register from "../pages/register/Register";
 import PrivateRouter from "../provider/PrivateRouter";
 import MyProfile from "../pages/MyProfile/MyProfile";
 import PrivateRouterProfile from "../provider/PrivateRouterProfile";
+import Loading from "../pages/loading/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
         path: "/",
         Component: Home,
         loader: () => fetch("/services.json"),
+        hydrateFallbackElement:<Loading></Loading>,
       },
       {
         path: "/card-details/:serviceId",
@@ -32,6 +34,7 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: () => fetch("/services.json"),
+        hydrateFallbackElement:<Loading></Loading>,
       },
       {
         path: "/myprofile",

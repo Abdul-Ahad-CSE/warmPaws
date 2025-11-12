@@ -118,11 +118,20 @@ export default function NavBar() {
               onClick={handleLogOut}
               className="btn btn-neutral btn-outline w-34"
             >
-              <img className="w-10 h-10" src={userIcon} alt="" />
+              <img
+                className="w-10 h-10"
+                src={`${user ? user.photoURL : userIcon}`}
+                alt=""
+              />
               LogOut
             </button>
           ) : (
             <Link className="btn btn-neutral btn-outline w-34" to="/auth/login">
+              <img
+                className="w-10 h-10"
+                src={userIcon}
+                alt=""
+              />
               Login
             </Link>
           )}

@@ -1,13 +1,15 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Eye, EyeOff } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Register() {
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, setUser, updateUser } = use(AuthContext);
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     //console.log(e.target);
@@ -38,18 +40,27 @@ export default function Register() {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        //console.log(user);
-        setUser(user);
+        console.log(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        toast.error(errorMessage);
       });
   };
 
   return (
     <div className="flex justify-center min-h-screen items-center">
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="card bg-base-100 w-full space-y-5 max-w-sm shrink-0 shadow-2xl">
         <h2 className="text-3xl font-bold text-center">
           Register your account
